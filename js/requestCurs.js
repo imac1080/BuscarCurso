@@ -34,7 +34,6 @@
           }
           if(Object.keys(json).length==0){
             document.getElementById("Content_TextBoxNullText_I").value="";
-            document.getElementById("currentCurso").value="";
             var divError = document.createElement('DIV');
             divError.classList.add('col');
             divError.innerHTML = '<div> <img  width="100%" height="225" src="https://i.imgur.com/0OWjA79.png" alt="Error"> </div>'        
@@ -84,6 +83,7 @@
 
   function eliminarVideos(){
     const elements = document.getElementsByClassName("col");
+    document.getElementById("currentCurso").textContent="";
     if(elements.length!=0){
         for (let i = elements.length-1; i >= 0; i--) {
             elements[i].parentNode.removeChild(elements[i]);  

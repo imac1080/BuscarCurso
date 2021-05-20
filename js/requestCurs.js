@@ -28,8 +28,9 @@
         document.getElementById("Content_TextBoxNullText_I").value="";
         for (let i = 0; i < Object.keys(json).length; i++) {
             linkytText=JSON.stringify(json[i].linkyt);
-            linkytText=linkytText.split("=");            
-            linkytText=linkytText[1].split("\"");
+            linkytText=linkytText.split("/");    
+            linkytText=linkytText[3].split("=");        
+            linkytText=linkytText[linkytText.length-1].split("\"");
             anadirVideos(linkytText[0]);
           }
           if(Object.keys(json).length==0){
@@ -41,12 +42,7 @@
           }
         
     });
-    },
-    (onRejected) => {
-       
-    })
-    
-    
+    })    
   }
   
   function anadirVideos(linkytText2){
@@ -62,11 +58,14 @@
         tiempoVideo=JSON.stringify(json.items[0].contentDetails.duration).split("M");
         tiempoVideo=tiempoVideo[0].split("PT");
         var divCreado = document.createElement('DIV');
-        //var descripcionYt2=descripcionYt.replace(/\n/g, "<br />")
         descripcionYt2=descripcionYt.split("\\n")
         descripcionYt="";
-        for (let i = 0; i < 10; i++) {
-            descripcionYt=descripcionYt+descripcionYt2[i]+"<br />";
+        if (descripcionYt2.length>10){
+          for (let i = 0; i < 10; i++) 
+            descripcionYt=descripcionYt+descripcionYt2[i]+"<br />";        
+        }else{
+          for (let i = 0; i < descripcionYt2.length-1; i++) 
+            descripcionYt=descripcionYt+descripcionYt2[i]+"<br />";        
         }
 
         divCreado.classList.add('col');

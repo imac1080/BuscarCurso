@@ -24,6 +24,7 @@
     .then(response=>{
         return response.json();
     }).then(json=>{
+        document.getElementById("currentCurso").textContent=document.getElementById("Content_TextBoxNullText_I").value;
         document.getElementById("Content_TextBoxNullText_I").value="";
         for (let i = 0; i < Object.keys(json).length; i++) {
             linkytText=JSON.stringify(json[i].linkyt);
@@ -33,6 +34,7 @@
           }
           if(Object.keys(json).length==0){
             document.getElementById("Content_TextBoxNullText_I").value="";
+            document.getElementById("currentCurso").value="";
             var divError = document.createElement('DIV');
             divError.classList.add('col');
             divError.innerHTML = '<div> <img  width="100%" height="225" src="https://i.imgur.com/0OWjA79.png" alt="Error"> </div>'        

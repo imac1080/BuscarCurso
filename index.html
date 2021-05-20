@@ -1,0 +1,75 @@
+<!doctype html>
+
+<html lang="en">
+  <head>   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <script src="js/requestCurs.js"></script>
+
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cursos Paxsem</title>
+
+
+    
+
+    <!-- Bootstrap core CSS -->
+
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
+
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
+    </style>
+
+    
+  </head>
+  <body>
+    
+
+<main>
+
+  <section class="py-5 text-center container">
+    <div class="row py-lg-5">
+      <div class="col-lg-6 col-md-8 mx-auto">
+        <h1 class="fw-light">Cursos Paxsem</h1>
+        <p class="lead text-muted">Cursos personalizados OU YEAH.</p>
+        <p>
+
+          <div class="dxbs-textbox ctrl-fixed-width-lg" id="Content_TextBoxNullText">
+            <div>
+              <input id="Content_TextBoxNullText_I" class="form-control text-muted" type="text" name="ctl00$Content$TextBoxNullText" placeholder="Nombre de curso..." autocomplete="off" savedspellcheck="[object Object]" spellcheck="true">
+            </div>
+          </div>
+          
+
+          <a class="btn btn-primary my-2" onclick="nuevoVideo();">Buscar curso</a>
+          <a class="btn btn-secondary my-2" onclick="eliminarVideos();">Limpiar</a>
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div >
+    <div class="container">
+
+      <div id="tablaCursos" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+        
+        
+      </div>
+    </div>
+  </div>
+
+</main>
+  </body>
+</html>

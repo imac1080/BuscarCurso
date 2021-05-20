@@ -84,6 +84,7 @@
   function eliminarVideos(){
     const elements = document.getElementsByClassName("col");
     document.getElementById("currentCurso").textContent="";
+    document.getElementById("Content_TextBoxNullText_I").value="";
     if(elements.length!=0){
         for (let i = elements.length-1; i >= 0; i--) {
             elements[i].parentNode.removeChild(elements[i]);  

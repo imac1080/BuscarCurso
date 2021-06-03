@@ -1,12 +1,29 @@
 
  window.addEventListener("keydown", checkKeyPress, false);
  var webHeroku="https://youtubepaxsem.herokuapp.com";
+
  
- function checkKeyPress(key){
-   if(key.keyCode == "13"){
-        nuevoVideo();
+ function ServidorLevantado(){ 
+  fetch(webHeroku+'/buscarCurso',{
+    method:'POST',
+    body:JSON.stringify({
+        curso:document.getElementById("Content_TextBoxNullText_I").value
+    }),
+    headers:{
+        "Content-Type":"application/json; charset=UTF-8"
+    }
+  })       
+  .then(response=>{
+    document.getElementById("btnBuscarCurso").style="opacity: 1";
+    document.getElementById("btnBuscarCurso").setAttribute("onclick","nuevoVideo();");
+  })
+}
+  
+   function checkKeyPress(key){
+     if(key.keyCode == "13" && document.getElementById("btnBuscarCurso").style.opacity==1){
+          nuevoVideo();
+     }
    }
- }
 
   function nuevoVideo(){
     if (document.getElementById("Content_TextBoxNullText_I").value!="")

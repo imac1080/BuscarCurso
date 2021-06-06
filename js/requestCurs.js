@@ -16,6 +16,7 @@
   .then(response=>{
     document.getElementById("btnBuscarCurso").style="opacity: 1";
     document.getElementById("btnBuscarCurso").setAttribute("onclick","nuevoVideo();");
+    document.getElementById("loader").style="display: none";
   })
 }
   
@@ -86,6 +87,7 @@
         }
 
         divCreado.classList.add('col');
+        divCreado.classList.add('animate-bottom');
         divCreado.innerHTML = '<div><div class="card shadow-sm">'
         +'<iframe width="100%" height="225" src="https://www.youtube-nocookie.com/embed/'+linkytText2+'" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>'
          +'<div class="card-body"><p class="card-text">'+descripcionYt+'<div class="d-flex justify-content-between align-items-center">'
